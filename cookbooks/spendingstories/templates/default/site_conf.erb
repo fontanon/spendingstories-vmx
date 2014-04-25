@@ -1,0 +1,9 @@
+WSGIScriptAlias / <%= @params[:docroot] %>/webapp/wsgi.py
+WSGIPythonPath <%= @params[:docroot] %>:<%= @params[:docroot] %>/venv/lib/python2.7/site-packages:<%= @params[:docroot] %>/libs
+
+<Directory <%= @params[:docroot] %>/webapp>
+<Files wsgi.py>
+	Order deny,allow
+	Allow from all
+</Files>
+</Directory>
